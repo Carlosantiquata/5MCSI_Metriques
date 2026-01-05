@@ -4,8 +4,14 @@ from flask import json
 from datetime import datetime
 from urllib.request import urlopen
 import sqlite3
+import requests
+from collections import Counter
                                                                                                                                        
 app = Flask(__name__)
+
+@app.route("/commits/")
+def commits():
+    return render_template("commits.html")
 
 @app.route("/histogramme/")
 def histogramme():
