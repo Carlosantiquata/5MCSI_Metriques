@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-moi</title>
+    <style>
+        /* Importation d'une jolie police Google */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Un dégradé moderne en arrière-plan */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px; /* Coins arrondis */
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* Ombre portée */
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Effet quand on clique dans la case */
+        input:focus, textarea:focus {
+            border-color: #764ba2;
+            box-shadow: 0 0 8px rgba(118, 75, 162, 0.2);
+        }
+
+        textarea {
+            resize: none; /* Empêche de déformer la zone de texte */
+            height: 120px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.02); /* Petit effet de grossissement au survol */
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Me contacter</h2>
+        <form action="#" method="post"> <div class="input-group">
+                <label for="nom">Votre Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Ex: Dupont" required>
+            </div>
+
+            <div class="input-group">
+                <label for="prenom">Votre Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Ex: Jean" required>
+            </div>
+
+            <div class="input-group">
+                <label for="message">Votre Message</label>
+                <textarea id="message" name="message" placeholder="Écrivez votre message ici..." required></textarea>
+            </div>
+
+            <button type="submit">Envoyer le message</button>
+        </form>
+    </div>
+
+</body>
+</html>
