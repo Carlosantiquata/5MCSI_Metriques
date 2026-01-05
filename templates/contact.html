@@ -4,19 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Dark Mode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Importation d'une police moderne et géométrique (Montserrat) */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
-        :root {
-            /* Définition des couleurs de la palette */
-            --bg-color: #0a0a0a;      /* Noir profond pour le fond */
-            --container-bg: #161616;  /* Gris très foncé pour le formulaire */
-            --text-color: #e0e0e0;    /* Blanc cassé pour le texte */
-            --accent-violet: #8A2BE2; /* Violet vibrant principal */
-            --accent-glow: #bf00ff;   /* Violet plus clair pour l'effet néon */
-        }
-
+        /* RESET ET BASES */
         * {
             margin: 0;
             padding: 0;
@@ -25,67 +16,113 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            /* Ajout d'un très subtil dégradé sombre pour la profondeur */
+            /* Fond noir avec dégradé violet */
+            background-color: #0a0a0a;
             background-image: radial-gradient(circle at top right, #1a0a2e 0%, #0a0a0a 60%);
-            height: 100vh;
+            height: 100vh; /* Prend toute la hauteur de l'écran */
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            color: var(--text-color);
+            color: #e0e0e0;
         }
 
+        /* LA BOITE DU FORMULAIRE */
         .contact-container {
-            background-color: var(--container-bg);
-            padding: 50px;
+            background-color: #161616;
+            padding: 40px;
             border-radius: 20px;
-            /* Bordure subtile violette et ombre portée sombre */
             border: 1px solid #2a1a3e;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            width: 100%;
+            width: 90%;
             max-width: 480px;
         }
 
         h2 {
             text-align: center;
             margin-bottom: 30px;
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            /* Le titre est en dégradé violet */
-            background: linear-gradient(to right, var(--accent-violet), var(--accent-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #8A2BE2; /* Violet */
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
+        /* CHAMPS DE SAISIE */
         .form-group {
-            margin-bottom: 25px;
-            position: relative;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
             color: #b0b0b0;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
 
         input, textarea {
             width: 100%;
-            padding: 15px;
-            background-color: #222; /* Fond des champs sombre */
-            border: 2px solid #333; /* Bordure discrète au repos */
-            border-radius: 10px;
-            color: var(--text-color);
+            padding: 12px;
+            background-color: #222;
+            border: 2px solid #333;
+            border-radius: 8px;
+            color: #fff;
             font-size: 1rem;
             outline: none;
-            transition: all 0.3s ease;
         }
 
-        /* EFFET WOW : Quand on clique dans un champ */
+        /* Effet quand on clique dans une case */
         input:focus, textarea:focus {
-            border-color: var(--accent-glow);
-            /* Effet de
+            border-color: #bf00ff;
+            background-color: #2a2a2a;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        /* BOUTON */
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #8A2BE2, #bf00ff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h2>Contactez-nous</h2>
+        
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+            </div>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+</body>
+</html>
